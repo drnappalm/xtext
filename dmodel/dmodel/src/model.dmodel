@@ -1,0 +1,19 @@
+package dmodel.model {
+
+	import java.lang.*
+	
+	entity Author {
+		name : String
+	}
+	
+	entity Post {
+		title : String
+		author : Author
+	}
+	
+	entity Forum {
+		createdBy : Author
+		many posts : Post
+	}
+
+}
