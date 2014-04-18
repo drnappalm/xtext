@@ -1,0 +1,14 @@
+package my.company.jvmodel {
+	entity Author {
+		name : String
+	}
+	
+	entity Post {
+		author : Author
+		text : String
+		
+		op clean() : void {
+			text = "";
+		}
+	}
+}
