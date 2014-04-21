@@ -1,5 +1,7 @@
 package org.example.xtend
 
+import static extension org.example.xtend.Helper.*
+
 class dummy {
 	protected val readOnlyList = (1..5)
 	var changeableList = (6..10)
@@ -43,5 +45,19 @@ class dummy {
 			}
 			return it.intValue % value != 0
 		].showValues
+	}
+	
+	def printElvis() {
+		val nullInt = (null as Integer)
+		val nonNullInt = new Integer(5)
+		println("Is Elvis in the haus? (null ?: ) - " + nullInt ?: "YEAHHHH!!!")
+		println("Is Elvis in the haus? (not null ?:) - " + nonNullInt ?: "YEAHHHH!!!")
+	}
+	
+	def nullProof() {
+		val nullInt = (null as Integer)
+		val nonNullInt = new Integer(5)
+		nullInt?.showNumber
+		nonNullInt?.showNumber
 	}
 }

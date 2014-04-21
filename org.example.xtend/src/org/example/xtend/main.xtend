@@ -23,5 +23,11 @@ class main {
 		println("EXT METHOD")
 		dummy.showMultiply(5)
 		inverted.showMultiply(10)
+		
+		println("ELVIS")
+		dummy.printElvis
+		
+		println("NULL OR NOT?")
+		dummy.nullProof
 	}
 }

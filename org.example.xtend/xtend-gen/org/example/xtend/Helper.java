@@ -2,6 +2,7 @@ package org.example.xtend;
 
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.example.xtend.dummy;
 
@@ -16,5 +17,9 @@ public class Helper {
     };
     Iterable<Integer> _map = IterableExtensions.<Integer, Integer>map(toMultiply.readOnlyList, _function);
     toMultiply.showValues(((int[])Conversions.unwrapArray(_map, int.class)));
+  }
+  
+  public static Integer showNumber(final Integer value) {
+    return InputOutput.<Integer>println(value);
   }
 }

@@ -25,5 +25,9 @@ public class main {
     InputOutput.<String>println("EXT METHOD");
     Helper.showMultiply(dummy, 5);
     Helper.showMultiply(inverted, 10);
+    InputOutput.<String>println("ELVIS");
+    dummy.printElvis();
+    InputOutput.<String>println("NULL OR NOT?");
+    dummy.nullProof();
   }
 }
