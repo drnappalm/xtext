@@ -29,5 +29,12 @@ class main {
 		
 		println("NULL OR NOT?")
 		dummy.nullProof
+		
+		println("ENUMERATION")
+		println("1-" + 1.enumValue + " | 2-" + 2.enumValue + " | 3-" + 3.enumValue)
+		
+		println("EXPRESSIONS")
+		println(try { "No exception" } catch (Exception e) {})
+		println(try { throw new Exception() } catch (Exception e) {"Exception"})
 	}
 }

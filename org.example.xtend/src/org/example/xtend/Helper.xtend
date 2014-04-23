@@ -8,4 +8,12 @@ class Helper {
 	def static showNumber(Integer value) {
 		println(value)
 	}
+	
+	def static getEnumValue(int value) {
+		switch value {
+			case 1: DummyEnum.One
+			case 2: DummyEnum.Two
+			case 3: DummyEnum.Three
+		}
+	}
 }

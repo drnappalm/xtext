@@ -1,22 +1,25 @@
 package org.example.xtend
 
 import static extension org.example.xtend.Helper.*
+import org.example.xtend.FieldClass
 
-class dummy {
+class dummy implements IDummy {
 	protected val readOnlyList = (1..5)
 	var changeableList = (6..10)
+	extension FieldClass field = new FieldClass
 	
 	@Property
 	var booleanProperty = false;
 	
-	new() {		
+	new() {
+		this.ok // extension from FieldClass (field)		
 	}
 	
 	new(IntegerRange changeableList) {
 		this.changeableList = changeableList
 	}
 	
-	def void showValues() {
+	override void showValues() {
 		showValues(readOnlyList)	
 	}
 	
