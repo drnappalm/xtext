@@ -1,6 +1,7 @@
 package org.example.xtend
 
 import static extension org.example.xtend.Helper.*
+import static extension java.util.Collections.*
 
 class main {
 	
@@ -36,5 +37,28 @@ class main {
 		println("EXPRESSIONS")
 		println(try { "No exception" } catch (Exception e) {})
 		println(try { throw new Exception() } catch (Exception e) {"Exception"})
+		
+		println("ARRAYS/COLLECTIONS")
+		val array = #[1,2,3]
+		println("Inmutable: " + array.join)
+		val int[] intArray = newIntArrayOfSize(3)
+		println("Inmutable: " + intArray.join)
+		val set = #{1,2,3}
+		println("Inmutable: " + set.join)
+		val map = #{1->1,2->2,3->3}
+		println("Inmutable: " + map.keySet.join + "," + map.values.join)
+		val list = newArrayList(1, 2, 3)
+		println("Mutable: " + list.join)
+		list.add(4)
+		println("Mutable: " + list.join)
+		
+		println("TYPED NULL")
+		val typedNull = null as dummy
+		println("It is still null not dummy: " + (typedNull instanceof dummy))
+		
+		showOperators
+		
+		println("INLINE TEXT")
+		println(showInlineText(1..10))
 	}
 }
