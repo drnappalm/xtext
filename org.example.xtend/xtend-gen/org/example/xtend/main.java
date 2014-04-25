@@ -25,25 +25,26 @@ public class main {
   public static void main(final String[] args) {
     final dummy dummy = new org.example.xtend.dummy();
     final inverteddummy inverted = new inverteddummy();
+    final org.example.xtend.dummy it = dummy;
     InputOutput.<String>println("VALUES LIST");
-    dummy.showValues();
+    it.showValues();
     InputOutput.<String>println("");
     inverted.showValues();
     InputOutput.<String>println("EVEN VALUES LIST");
-    dummy.showEvenValues();
+    it.showEvenValues();
     InputOutput.<String>println("");
     inverted.showEvenValues();
     InputOutput.<String>println("ODD VALUES LIST");
-    dummy.showOddValues();
+    it.showOddValues();
     InputOutput.<String>println("");
     inverted.showOddValues();
     InputOutput.<String>println("EXT METHOD");
-    Helper.showMultiply(dummy, 5);
+    Helper.showMultiply(it, 5);
     Helper.showMultiply(inverted, 10);
     InputOutput.<String>println("ELVIS");
-    dummy.printElvis();
+    it.printElvis();
     InputOutput.<String>println("NULL OR NOT?");
-    dummy.nullProof();
+    it.nullProof();
     InputOutput.<String>println("ENUMERATION");
     DummyEnum _enumValue = Helper.getEnumValue(1);
     String _plus = ("1-" + _enumValue);
@@ -123,5 +124,15 @@ public class main {
     IntegerRange _upTo = new IntegerRange(1, 10);
     CharSequence _showInlineText = Helper.showInlineText(_upTo);
     InputOutput.<CharSequence>println(_showInlineText);
+    InputOutput.<String>println("NULL SAFE CALLS");
+    final org.example.xtend.dummy nullDummy = ((org.example.xtend.dummy) null);
+    InputOutput.<String>println("Calling nullDummy?.onlyCalledIfNotNull...");
+    if (nullDummy!=null) {
+      nullDummy.onlyCalledIfNotNull();
+    }
+    InputOutput.<String>println("Calling dummy?.onlyCalledIfNotNull...");
+    if (dummy!=null) {
+      dummy.onlyCalledIfNotNull();
+    }
   }
 }

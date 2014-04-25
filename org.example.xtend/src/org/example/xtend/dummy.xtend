@@ -63,4 +63,8 @@ class dummy implements IDummy {
 		nullInt?.showNumber
 		nonNullInt?.showNumber
 	}
+	
+	def onlyCalledIfNotNull() {
+		println("This instance is not null thus this function got called!")
+	}
 }

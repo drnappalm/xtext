@@ -8,28 +8,32 @@ class main {
 	def static void main(String[] args) {
 		val dummy = new dummy
 		val inverted = new inverteddummy
+		
+		// so that I don't always have to write dummy.
+		val it = dummy
+		
 		println("VALUES LIST")
-		dummy.showValues
+		showValues
 		println("")
 		inverted.showValues
 		println("EVEN VALUES LIST")
-		dummy.showEvenValues
+		showEvenValues
 		println("")
 		inverted.showEvenValues
 		println("ODD VALUES LIST")
-		dummy.showOddValues
+		showOddValues
 		println("")
 		inverted.showOddValues
 		
 		println("EXT METHOD")
-		dummy.showMultiply(5)
+		showMultiply(5)
 		inverted.showMultiply(10)
 		
 		println("ELVIS")
-		dummy.printElvis
+		printElvis
 		
 		println("NULL OR NOT?")
-		dummy.nullProof
+		nullProof
 		
 		println("ENUMERATION")
 		println("1-" + 1.enumValue + " | 2-" + 2.enumValue + " | 3-" + 3.enumValue)
@@ -60,5 +64,12 @@ class main {
 		
 		println("INLINE TEXT")
 		println(showInlineText(1..10))
+		
+		println("NULL SAFE CALLS")
+		val nullDummy = null as dummy
+		println("Calling nullDummy?.onlyCalledIfNotNull...")
+		nullDummy?.onlyCalledIfNotNull
+		println("Calling dummy?.onlyCalledIfNotNull...")
+		dummy?.onlyCalledIfNotNull
 	}
 }
