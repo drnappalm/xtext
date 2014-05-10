@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sTLanguage" nsURI="http://www.mph.org/plc/st/STLanguage" nsPrefix="sTLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="POU">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//POU_BODY"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="POU_BODY">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elements" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
